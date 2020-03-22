@@ -1,4 +1,4 @@
-package com.vakk.myapplication.ui.base
+package com.vakk.myapplication.ui.list.base
 
 import android.os.Bundle
 import androidx.lifecycle.ViewModel

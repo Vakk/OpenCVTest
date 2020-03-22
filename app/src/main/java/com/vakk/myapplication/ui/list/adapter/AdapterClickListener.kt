@@ -1,4 +1,4 @@
-package com.vakk.myapplication.ui.adapter
+package com.vakk.myapplication.ui.list.adapter
 
 import android.view.View
 

@@ -1,4 +1,4 @@
-package com.vakk.myapplication.ui.base
+package com.vakk.myapplication.ui.list.base
 
 import android.content.Context
 import android.os.Bundle
@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.vakk.myapplication.ui.adapter.AdapterClickListener
+import com.vakk.myapplication.ui.list.adapter.AdapterClickListener
 import java.lang.ref.WeakReference
 
 abstract class BaseViewHolder<T>(view: View, listener: AdapterClickListener<T>) :
