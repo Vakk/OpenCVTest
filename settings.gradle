@@ -1,5 +1,5 @@
 rootProject.name='OpenCVFaceRecognition'
-include ':app'
+include ':app', ':openCV'
 include ':bootstrap'
 include ':core'
 include ':database'
