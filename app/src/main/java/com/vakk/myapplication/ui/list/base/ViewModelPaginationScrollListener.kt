@@ -1,4 +1,4 @@
-package com.vakk.myapplication.ui.base
+package com.vakk.myapplication.ui.list.base
 
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
