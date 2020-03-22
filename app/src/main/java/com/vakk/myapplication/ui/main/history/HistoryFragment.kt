@@ -2,6 +2,7 @@ package com.vakk.myapplication.ui.main.history
 
 import android.os.Bundle
 import android.view.View
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.vakk.myapplication.R
 import com.vakk.myapplication.ui.list.adapter.AdapterClickListener
@@ -21,12 +22,14 @@ class HistoryFragment :
     }
 
     override fun onClick(item: HistoryItemViewModel, view: View) {
-
+        //TODO: Add details view.
     }
 
     override fun onPrepareObservers() {
         super.onPrepareObservers()
-        viewModel.on
+        viewModel.onItemsUpdate.observe(Observer {
+            adapter.replaceItems(it)
+        })
     }
 
     private fun initList() {
