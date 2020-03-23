@@ -17,7 +17,8 @@ abstract class ActivitiesModule {
     @ContributesAndroidInjector(
         modules = [
             MainModule::class,
-            MainViewModelModule::class
+            MainViewModelModule::class,
+            MainInjectorsModule::class
         ]
     )
     @MainScope
