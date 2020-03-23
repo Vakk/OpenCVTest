@@ -8,6 +8,8 @@ apply from: "$rootProject.projectDir/gradle/dagger.gradle"
 android {
     compileSdkVersion rootProject.compileSdkVersion
 
+    ndkVersion "21.0.6113669"
+
     defaultConfig {
         minSdkVersion rootProject.minSdkVersion
         targetSdkVersion rootProject.targetSdkVersion
