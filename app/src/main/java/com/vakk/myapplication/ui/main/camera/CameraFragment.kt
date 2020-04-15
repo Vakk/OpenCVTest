@@ -10,7 +10,6 @@ import com.vakk.myapplication.utils.CameraDetector
 import com.vakk.myapplication.utils.TAG
 import kotlinx.android.synthetic.main.fragment_camera.*
 import org.opencv.android.*
-import org.opencv.android.CameraBridgeViewBase.CvCameraViewFrame
 import org.opencv.core.*
 import org.opencv.imgproc.Imgproc
 import org.opencv.objdetect.CascadeClassifier
@@ -42,7 +41,7 @@ class CameraFragment
             Log.d(
                 TAG,
                 "Internal OpenCV library not found. Using OpenCV Manager for initialization"
-            );
+            )
             OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_3_0_0, context, loaderCallback);
         } else {
             Log.d(TAG, "OpenCV library found inside package. Using it!")
@@ -89,7 +88,7 @@ private class CvCameraListener(cameraFragment: CameraFragment) :
     private var absoluteFaceSize = 0
     private var relativeFaceSize = 0
 
-    override fun onCameraFrame(inputFrame: CvCameraViewFrame): Mat? {
+    override fun onCameraFrame(inputFrame: CameraBridgeViewBase.CvCameraViewFrame): Mat? {
         rgba = inputFrame.rgba()
         gray = inputFrame.gray()
         val gray = gray ?: return null

@@ -27,7 +27,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
 }
 
 dependencies {
@@ -35,7 +34,7 @@ dependencies {
 
     implementation project(path: ':bootstrap')
     implementation project(path: ':core')
-    implementation project(path: ':opencv')
+    implementation project(path: ':open-cv')
 
     implementation "androidx.constraintlayout:constraintlayout:$constraintLayout_version"
     implementation "com.google.android.material:material:$material_version"
