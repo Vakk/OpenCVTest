@@ -31,7 +31,7 @@ class CameraFragment
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        svCamera.visibility = CameraBridgeViewBase.VISIBLE;
+        svCamera.visibility = CameraBridgeViewBase.VISIBLE
         svCamera.setCvCameraViewListener(CvCameraListener(this))
     }
 
@@ -70,9 +70,7 @@ private class CvCameraListener(cameraFragment: CameraFragment) :
 
     private var detectorType: DetectorType?
         get() = cameraFragment?.detectorType
-        set(value) {
-            cameraFragment?.detectorType = detectorType
-        }
+        set(value) { cameraFragment?.detectorType = value }
 
     private var javaDetector: CascadeClassifier?
         get() = cameraFragment?.javaDetector
@@ -85,8 +83,8 @@ private class CvCameraListener(cameraFragment: CameraFragment) :
             cameraFragment?.nativeDetector = value
         }
 
-    private var gray = Mat()
-    private var rgba = Mat()
+    private var gray: Mat? = null
+    private var rgba: Mat? = null
 
     private var absoluteFaceSize = 0
     private var relativeFaceSize = 0
@@ -94,6 +92,8 @@ private class CvCameraListener(cameraFragment: CameraFragment) :
     override fun onCameraFrame(inputFrame: CvCameraViewFrame): Mat? {
         rgba = inputFrame.rgba()
         gray = inputFrame.gray()
+        val gray = gray ?: return null
+        val rgba = rgba ?: return null
         if (absoluteFaceSize == 0) {
             val height: Int = gray.rows()
             if (height * relativeFaceSize > 0) {
@@ -129,8 +129,8 @@ private class CvCameraListener(cameraFragment: CameraFragment) :
     }
 
     override fun onCameraViewStopped() {
-        gray.release()
-        rgba.release()
+        gray?.release()
+        rgba?.release()
     }
 }
 
@@ -190,7 +190,7 @@ class LoaderCallback(context: Context, cameraFragment: CameraFragment) :
                         this.javaDetector = null
                     } else Log.i(
                         TAG,
-                        "Loaded cascade classifier from " + mCascadeFile.getAbsolutePath()
+                        "Loaded cascade classifier from " + mCascadeFile.absolutePath
                     )
                     nativeDetector = CameraDetector(mCascadeFile.absolutePath, 0)
                     cascadeDir.delete()

@@ -35,7 +35,7 @@ dependencies {
 
     implementation project(path: ':bootstrap')
     implementation project(path: ':core')
-    implementation project(path: ':openCV')
+    implementation project(path: ':opencv')
 
     implementation "androidx.constraintlayout:constraintlayout:$constraintLayout_version"
     implementation "com.google.android.material:material:$material_version"
